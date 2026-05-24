@@ -32,7 +32,7 @@ public class ModItemModels extends ItemModelGenerators {
     }
 
     public void generateHarpoonCrossbow(Item item) {
-        ItemModel.Unbaked crossbowModel = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(item));
+        ItemModel.Unbaked crossbowModel = ItemModelUtils.plainModel(this.createFlatItemModel(item, "_standby", ModelTemplates.CROSSBOW));
         ItemModel.Unbaked pulling0 = ItemModelUtils.plainModel(this.createFlatItemModel(item, "_pulling_0", ModelTemplates.CROSSBOW));
         ItemModel.Unbaked pulling1 = ItemModelUtils.plainModel(this.createFlatItemModel(item, "_pulling_1", ModelTemplates.CROSSBOW));
         ItemModel.Unbaked pulling2 = ItemModelUtils.plainModel(this.createFlatItemModel(item, "_pulling_2", ModelTemplates.CROSSBOW));

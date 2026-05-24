@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:adventure/ol_betsy",
+  "criteria": {
+    "shot_crossbow": {
+      "conditions": {
+        "item": {
+          "items": "harpooned:harpoon_crossbow"
+        }
+      },
+      "trigger": "minecraft:shot_crossbow"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.adventure.shoot_harpoon.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "harpooned:harpoon_crossbow"
+    },
+    "title": {
+      "translate": "advancements.adventure.shoot_harpoon.title"
+    }
+  },
+  "requirements": [
+    [
+      "shot_crossbow"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

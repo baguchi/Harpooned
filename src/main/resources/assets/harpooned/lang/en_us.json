@@ -1,5 +1,7 @@
 {
   "entity.harpooned.iron_harpoon": "Iron Harpoon",
   "item.harpooned.iron_harpoon": "Iron Harpoon",
-  "item.harpooned.harpoon_crossbow": "Harpoon Crossbow"
+  "item.harpooned.harpoon_crossbow": "Harpoon Crossbow",
+  "advancements.adventure.shoot_harpoon.title": "What a Harpooned!",
+  "advancements.adventure.shoot_harpoon.description": "Use Harpoon Crossbow with Harpoon"
 }

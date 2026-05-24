@@ -26,7 +26,7 @@ public abstract class CrossbowItemMixin extends ProjectileWeaponItem {
     @Inject(method = "getChargeDuration", at = @At("HEAD"), cancellable = true)
     private static void getChargeDuration(ItemStack stack, LivingEntity shooter, CallbackInfoReturnable<Integer> cir) {
         if (stack.getItem() instanceof HarpoonCrossbowItem) {
-            float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 1.25F * 2);
+            float f = EnchantmentHelper.modifyCrossbowChargingTime(stack, shooter, 1.25F * 1.8F);
             cir.setReturnValue(Mth.floor(f * 20.0F));
         }
     }

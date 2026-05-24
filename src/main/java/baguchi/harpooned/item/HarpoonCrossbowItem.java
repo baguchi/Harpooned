@@ -1,6 +1,7 @@
 package baguchi.harpooned.item;
 
 import baguchi.harpooned.register.ModItemTags;
+import baguchi.harpooned.register.ModItems;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.ChargedProjectiles;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -24,14 +26,17 @@ public class HarpoonCrossbowItem extends CrossbowItem {
         super(properties);
     }
 
+    @Override
     public Predicate<ItemStack> getSupportedHeldProjectiles() {
         return HARPOON_ONLY;
     }
 
+    @Override
     public Predicate<ItemStack> getAllSupportedProjectiles() {
         return HARPOON_ONLY;
     }
 
+    @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         ChargedProjectiles chargedProjectiles = itemStack.get(DataComponents.CHARGED_PROJECTILES);
@@ -43,17 +48,17 @@ public class HarpoonCrossbowItem extends CrossbowItem {
         }
     }
 
+    @Override
+    public boolean useOnRelease(ItemStack itemStack) {
+        return true;
+    }
+
     private static float getShootingPower(ChargedProjectiles projectiles) {
         return projectiles.contains(Items.FIREWORK_ROCKET) ? 1.6F : 3.15F;
     }
 
-    public static boolean tryLoadProjectiles(LivingEntity shooter, ItemStack heldItem) {
-        List<ItemStack> drawn = draw(heldItem, shooter.getProjectile(heldItem), shooter);
-        if (!drawn.isEmpty()) {
-            heldItem.set(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.ofNonEmpty(drawn));
-            return true;
-        } else {
-            return false;
-        }
+    @Override
+    public ItemStack getDefaultCreativeAmmo(@Nullable Player player, ItemStack projectileWeaponItem) {
+        return ModItems.IRON_HARPOON.toStack();
     }
 }

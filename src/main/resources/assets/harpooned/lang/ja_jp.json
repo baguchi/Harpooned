@@ -1,4 +1,6 @@
 {
   "item.harpooned.iron_harpoon": "鉄の銛",
-  "item.harpooned.harpoon_crossbow": "銛用クロスボウ"
+  "item.harpooned.harpoon_crossbow": "ハープーンクロスボウ",
+  "advancements.adventure.shoot_harpoon.title": "What a Harpooned!",
+  "advancements.adventure.shoot_harpoon.description": "ハープーンクロスボウを使用し、銛を放つ"
 }

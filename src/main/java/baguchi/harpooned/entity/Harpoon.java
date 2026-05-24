@@ -18,10 +18,12 @@ public class Harpoon extends AbstractArrow {
 
     public Harpoon(Level level, LivingEntity owner, ItemStack harpoonItem) {
         super(ModEntities.IRON_HARPOON.get(), owner, level, harpoonItem, null);
+        this.setBaseDamage(4.0F);
    }
 
     public Harpoon(Level level, double x, double y, double z, ItemStack tridentItem) {
         super(ModEntities.IRON_HARPOON.get(), x, y, z, level, tridentItem, tridentItem);
+        this.setBaseDamage(4.0F);
     }
 
 
@@ -40,6 +42,7 @@ public class Harpoon extends AbstractArrow {
         return 0.98F;
     }
 
+    @Override
     protected double getDefaultGravity() {
         if(!this.isInWater()){
             return 0.08;

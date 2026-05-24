@@ -3,6 +3,7 @@ package baguchi.harpooned.data;
 import baguchi.harpooned.Harpooned;
 import baguchi.harpooned.data.generator.EntityTagGenerator;
 import baguchi.harpooned.data.generator.ItemTagGenerator;
+import baguchi.harpooned.data.generator.ModAdvancementGenerator;
 import baguchi.harpooned.data.generator.ModModelData;
 import baguchi.harpooned.data.generator.recipe.CraftingGenerator;
 import net.minecraft.core.HolderLookup;
@@ -29,6 +30,7 @@ public class DataGenerators {
         generator.addProvider(true, new ItemTagGenerator(packOutput, lookupProvider));
         generator.addProvider(true, new EntityTagGenerator(packOutput, lookupProvider));
         generator.addProvider(true, new Runner(packOutput, lookupProvider));
+        generator.addProvider(true, new ModAdvancementGenerator(packOutput, lookupProvider));
       }
 
     public static final class Runner extends RecipeProvider.Runner {

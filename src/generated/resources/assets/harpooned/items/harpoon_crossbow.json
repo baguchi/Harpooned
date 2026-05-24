@@ -14,7 +14,7 @@
       "type": "minecraft:condition",
       "on_false": {
         "type": "minecraft:model",
-        "model": "harpooned:item/harpoon_crossbow"
+        "model": "harpooned:item/harpoon_crossbow_standby"
       },
       "on_true": {
         "type": "minecraft:range_dispatch",
