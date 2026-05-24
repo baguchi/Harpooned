@@ -3,7 +3,6 @@ package baguchi.harpooned.item;
 import baguchi.harpooned.entity.Harpoon;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
-import net.minecraft.world.entity.projectile.arrow.Arrow;
 import net.minecraft.world.item.ArrowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,6 +16,6 @@ public class HarpoonItem extends ArrowItem {
 
     @Override
     public AbstractArrow createArrow(Level level, ItemStack itemStack, LivingEntity owner, @Nullable ItemStack firedFromWeapon) {
-        return new Arrow(level, owner, itemStack.copyWithCount(1), firedFromWeapon);
+        return new Harpoon(level, owner, itemStack.copyWithCount(1), firedFromWeapon);
     }
 }

@@ -9,6 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.Nullable;
 
 public class Harpoon extends AbstractArrow {
     public Harpoon(EntityType<? extends Harpoon> type, Level level) {
@@ -16,13 +17,13 @@ public class Harpoon extends AbstractArrow {
         this.setBaseDamage(4.0F);
     }
 
-    public Harpoon(Level level, LivingEntity owner, ItemStack harpoonItem) {
-        super(ModEntities.IRON_HARPOON.get(), owner, level, harpoonItem, null);
+    public Harpoon(Level level, LivingEntity owner, ItemStack pickupItemStack, @Nullable ItemStack firedFromWeapon) {
+        super(ModEntities.IRON_HARPOON.get(), owner, level, pickupItemStack, firedFromWeapon);
         this.setBaseDamage(4.0F);
    }
 
-    public Harpoon(Level level, double x, double y, double z, ItemStack tridentItem) {
-        super(ModEntities.IRON_HARPOON.get(), x, y, z, level, tridentItem, tridentItem);
+    public Harpoon(Level level, double x, double y, double z, ItemStack pickupItemStack, @Nullable ItemStack firedFromWeapon) {
+        super(ModEntities.IRON_HARPOON.get(), x, y, z, level, pickupItemStack, firedFromWeapon);
         this.setBaseDamage(4.0F);
     }
 
