@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:iron_bars",
+    "N": "minecraft:iron_nugget",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "B",
+    "S",
+    "N"
+  ],
+  "result": {
+    "count": 4,
+    "id": "harpooned:iron_harpoon"
+  }
+}
