@@ -3,10 +3,8 @@ package baguchi.harpooned.item;
 import baguchi.harpooned.register.ModItemTags;
 import baguchi.harpooned.register.ModItems;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
@@ -16,7 +14,6 @@ import net.minecraft.world.item.component.ChargedProjectiles;
 import net.minecraft.world.level.Level;
 import org.jspecify.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public class HarpoonCrossbowItem extends CrossbowItem {
@@ -54,7 +51,7 @@ public class HarpoonCrossbowItem extends CrossbowItem {
     }
 
     private static float getShootingPower(ChargedProjectiles projectiles) {
-        return projectiles.contains(Items.FIREWORK_ROCKET) ? 1.6F : 3.15F;
+        return projectiles.contains(Items.FIREWORK_ROCKET) ? 1.6F : 3.6F;
     }
 
     @Override
