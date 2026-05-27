@@ -4,7 +4,7 @@ import baguchi.harpooned.register.ModItemTags;
 import baguchi.harpooned.register.ModItems;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
@@ -12,8 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.ChargedProjectiles;
 import net.minecraft.world.level.Level;
-import org.jspecify.annotations.Nullable;
 
+import javax.annotation.Nullable;
 import java.util.function.Predicate;
 
 public class HarpoonCrossbowItem extends CrossbowItem {
@@ -34,12 +34,12 @@ public class HarpoonCrossbowItem extends CrossbowItem {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         ChargedProjectiles chargedProjectiles = itemStack.get(DataComponents.CHARGED_PROJECTILES);
         if (chargedProjectiles != null && !chargedProjectiles.isEmpty()) {
             this.performShooting(level, player, hand, itemStack, getShootingPower(chargedProjectiles), 1.0F, null);
-            return InteractionResult.CONSUME;
+            return InteractionResultHolder.consume(itemStack);
         } else {
             return super.use(level, player, hand);
         }

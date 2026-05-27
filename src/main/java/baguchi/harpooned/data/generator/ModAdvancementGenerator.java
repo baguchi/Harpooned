@@ -5,18 +5,15 @@ import baguchi.harpooned.register.ModItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.criterion.*;
+import net.minecraft.advancements.critereon.ShotCrossbowTrigger;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.tags.EntityTypeTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 
 import java.util.List;
@@ -45,7 +42,7 @@ public class ModAdvancementGenerator extends AdvancementProvider {
             HolderLookup.RegistryLookup<Block> blocks = provider.lookupOrThrow(Registries.BLOCK);
 
             AdvancementHolder shotHarpoon = Advancement.Builder.advancement()
-                    .parent(Identifier.withDefaultNamespace("adventure/ol_betsy"))
+                    .parent(ResourceLocation.withDefaultNamespace("adventure/ol_betsy"))
                     .display(
                             ModItems.HARPOON_CROSSBOW.asItem(),
                             Component.translatable("advancements.adventure.shoot_harpoon.title"),
@@ -56,7 +53,7 @@ public class ModAdvancementGenerator extends AdvancementProvider {
                             true,
                             false
                     )
-                    .addCriterion("shot_crossbow", ShotCrossbowTrigger.TriggerInstance.shotCrossbow(items, ModItems.HARPOON_CROSSBOW))
+                    .addCriterion("shot_crossbow", ShotCrossbowTrigger.TriggerInstance.shotCrossbow(ModItems.HARPOON_CROSSBOW))
                     .save(consumer, Harpooned.MODID +":shoot_harpoon");
         }
     }

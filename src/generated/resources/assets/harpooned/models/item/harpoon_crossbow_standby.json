@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/crossbow",
-  "textures": {
-    "layer0": "harpooned:item/harpoon_crossbow_standby"
-  }
-}

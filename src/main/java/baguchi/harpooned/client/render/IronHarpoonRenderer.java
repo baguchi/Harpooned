@@ -4,22 +4,17 @@ import baguchi.harpooned.Harpooned;
 import baguchi.harpooned.entity.Harpoon;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.state.ArrowRenderState;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 
-public class IronHarpoonRenderer extends ArrowRenderer<Harpoon, ArrowRenderState> {
-    public static final Identifier LOCATION = Identifier.fromNamespaceAndPath(Harpooned.MODID, "textures/entity/iron_harpoon.png");
+public class IronHarpoonRenderer extends ArrowRenderer<Harpoon> {
+    public static final ResourceLocation LOCATION = ResourceLocation.fromNamespaceAndPath(Harpooned.MODID, "textures/entity/iron_harpoon.png");
 
     public IronHarpoonRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
     @Override
-    protected Identifier getTextureLocation(ArrowRenderState state) {
+    public ResourceLocation getTextureLocation(Harpoon state) {
         return LOCATION;
-    }
-
-    public ArrowRenderState createRenderState() {
-        return new ArrowRenderState();
     }
 }
